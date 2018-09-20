@@ -1,18 +1,8 @@
-#!/usr/bin/env bash
-
-# Usage: ./bump_version.sh <major|minor|patch> - Increments the relevant version part by one.
-#
-# Usage 2: ./bump_version.sh <version-from> <version-to>
-# 	e.g: ./bump_version.sh 1.1.1 2.0
-
 set -e
 
-# Define which files to update and the pattern to look for
-# $1 Current version
-# $2 New version
 function bump_files() {
 	bump VERSION "v$1" "v$2"
-	bump README.md "Jake v$current_version" "Jake v$new_version"
+	bump README.md "# Jake v$current_version" "# Jake v$new_version"
 }
 
 function bump() {

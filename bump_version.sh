@@ -92,10 +92,10 @@ echo "Committing changed files..."
 git add --all
 git commit -m "Bumped version to $new_version"
 
-# echo "Adding new version tag: $new_tag..."
-# git tag "$new_tag"
+echo "Adding new version tag: $new_tag..."
+git tag "$new_tag"
 
-# current_branch=$(git symbolic-ref --short HEAD)
+current_branch=$(git symbolic-ref --short HEAD)
 
-# echo "Pushing branch $current_branch and tag $new_tag upstream..."
-# git push "$current_branch $new_tag"
+echo "Pushing branch $current_branch and tag $new_tag upstream..."
+echo git push origin master "$current_branch $new_tag"

@@ -67,7 +67,7 @@ new_tag="v$new_version"
 
 echo "Committing changed files..."
 git add --all
-git commit -m "Bumped version to $new_version"
+git commit -m "Setting version to $new_version [ci skip]"
 
 echo "Adding new version tag: $new_tag..."
 git tag "$new_tag"

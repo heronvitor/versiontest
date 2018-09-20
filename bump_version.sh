@@ -28,17 +28,6 @@ function bump() {
 	rm -f "$tmp_file"
 }
 
-function confirm() {
-	read -r -p "$@ [Y/n]: " confirm
-
-	case "$confirm" in
-		[Nn][Oo]|[Nn])
-			echo "Aborting."
-			exit
-			;;
-	esac
-}
-
 if [ "$1" == "" ]; then
 	echo >&2 "No 'from' version set. Aborting."
 	exit 1
@@ -85,8 +74,6 @@ fi
 bump_files "$current_version" "$new_version"
 
 new_tag="v$new_version"
-
-confirm "Publish $new_tag?"
 
 echo "Committing changed files..."
 git add --all

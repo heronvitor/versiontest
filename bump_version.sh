@@ -12,7 +12,7 @@ set -e
 # $2 New version
 function bump_files() {
 	bump VERSION "v$1" "v$2"
-	#bump README.md "my-plugin v$current_version" "my-plugin v$new_version"
+	bump README.md "Jake v$current_version" "Jake v$new_version"
 }
 
 function bump() {
